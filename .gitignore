@@ -65,3 +65,4 @@ typings/
 src/db_feed.sqlite3
 
 .idea
+config/config.json
