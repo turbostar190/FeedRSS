@@ -1,0 +1,22 @@
+{
+  "name": "feed_rss",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/cron.js",
+    "bot": "node src/bot.js"
+  },
+  "keywords": ["feedRSS", "telegram", "bot"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "better-sqlite3": "^5.4.0",
+    "dotenv": "^6.2.0",
+    "html2json": "^1.0.2",
+    "moment": "^2.24.0",
+    "rss-parser": "^3.6.2",
+    "telebot": "^1.2.6"
+  }
+}
