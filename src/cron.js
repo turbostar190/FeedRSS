@@ -13,7 +13,7 @@ const moment = require('moment');
  * @returns {Object}
  */
 function getUserUids(){
-    return db.prepare('SELECT uid FROM user WHERE wantFeed = 1').all();
+    return db.prepare('SELECT uid FROM user WHERE wantFeed = 1;').all();
 }
 
 /**
@@ -21,7 +21,7 @@ function getUserUids(){
  * @returns {{timestamp: string}}
  */
 function getLastCheck() {
-    return db.prepare("SELECT timestamp FROM lastCheck").get();
+    return db.prepare("SELECT timestamp FROM lastCheck;").get();
 }
 
 /**
@@ -30,7 +30,7 @@ function getLastCheck() {
  * @returns {boolean} true se UPDATE eseguito con successo, false altrimenti
  */
 function updateLastCheck(timestamp) {
-    let sql = db.prepare("UPDATE lastCheck SET timestamp = ?").run(String(timestamp));
+    let sql = db.prepare("UPDATE lastCheck SET timestamp = ?;").run(String(timestamp));
     return sql.changes > 0;
 }
 
