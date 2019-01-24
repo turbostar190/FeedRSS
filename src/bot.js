@@ -32,7 +32,7 @@ function wantFeed(uid, sub) {
     return sql.changes > 0;
 }
 
-bot.on('/start', (msg) => {
+bot.on('/start', msg => {
     if (isNew(msg.from.id).success) {
         msg.reply.text("Benvenuto nel bot! Per iniziare a ricevere le notifiche degli ultimi feed digita /toms.");
     } else {
@@ -41,6 +41,9 @@ bot.on('/start', (msg) => {
 });
 
 bot.on('/toms', msg => {
+    if (db.prepare('SELECT wantFeed FROM user WHERE uid = ?;').get(String(msg.from.id)).wantFeed == 1)
+        return msg.reply.text("Hai già scelto di ricevere notifiche per nuove news!");
+
     if (wantFeed(msg.from.id, true)) {
         return msg.reply.text("Perfetto! Riceverai notifiche per nuovi articoli di Tom's Hardware Italia proprio qui!");
     } else {
@@ -49,6 +52,9 @@ bot.on('/toms', msg => {
 });
 
 bot.on('/stop', msg => {
+    if (db.prepare('SELECT wantFeed FROM user WHERE uid = ?;').get(String(msg.from.id)).wantFeed == 0)
+        return msg.reply.text("Hai già scelto di non ricevere più notifiche per nuove news!");
+
     if (wantFeed(msg.from.id, false)) {
         return msg.reply.text("Non riceverai più notifiche per nuovi articoli di Tom's Hardware Italia!");
     } else {

@@ -21,7 +21,7 @@ npm run bot
 
 To use the notifier on new news add the commmand 
 ```bash
-npm run start
+npm run cron
 ```
 to [Crontab](https://www.adminschoice.com/crontab-quick-reference).
 
