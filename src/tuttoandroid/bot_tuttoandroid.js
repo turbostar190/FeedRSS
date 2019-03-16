@@ -45,7 +45,7 @@ bot.on('/feed', msg => {
         return msg.reply.text("Hai già scelto di ricevere notifiche per nuove news!");
 
     if (wantFeed(msg.from.id, true)) {
-        return msg.reply.text("Perfetto! Riceverai notifiche per nuovi articoli di Tom's Hardware Italia proprio qui!");
+        return msg.reply.text("Perfetto! Riceverai notifiche per nuovi articoli di TuttoAndroid proprio qui!");
     } else {
         return msg.reply.text("Si è verificato un errore durante l'elaborazione della richiesta! Riprova più tardi.");
     }
@@ -56,7 +56,7 @@ bot.on('/stop', msg => {
         return msg.reply.text("Hai già scelto di non ricevere più notifiche per nuove news!");
 
     if (wantFeed(msg.from.id, false)) {
-        return msg.reply.text("Non riceverai più notifiche per nuovi articoli di Tom's Hardware Italia!");
+        return msg.reply.text("Non riceverai più notifiche per nuovi articoli di TuttoAndroid!");
     } else {
         return msg.reply.text("Si è verificato un errore durante l'elaborazione della richiesta! Riprova più tardi.");
     }
