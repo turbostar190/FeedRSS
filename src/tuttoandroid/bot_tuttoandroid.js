@@ -40,7 +40,7 @@ bot.on('/start', msg => {
     }
 });
 
-bot.on('/toms', msg => {
+bot.on('/feed', msg => {
     if (db.prepare('SELECT wantFeed FROM user WHERE uid = ?;').get(String(msg.from.id)).wantFeed == 1)
         return msg.reply.text("Hai già scelto di ricevere notifiche per nuove news!");
 
