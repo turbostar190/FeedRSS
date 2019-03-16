@@ -65,4 +65,5 @@ function updateLastCheck(timestamp) {
 
     let lastEdit = new Date(feed.items[feed.items.length - 1].pubDate).getTime();
     if (!updateLastCheck(lastEdit)) throw "Errore UPDATE timestamp lastCheck";
+    db.close();
 })();
