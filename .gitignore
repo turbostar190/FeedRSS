@@ -59,3 +59,10 @@ typings/
 
 # next.js build output
 .next
+
+### USER
+# DB
+src/db_feed.sqlite3
+
+.idea
+config/config.json
